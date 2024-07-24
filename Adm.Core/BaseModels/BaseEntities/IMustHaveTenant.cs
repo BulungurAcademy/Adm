@@ -1,4 +1,4 @@
-﻿namespace Adm.Domain.Models.Base.BaseEntities;
+﻿namespace Adm.Core.BaseModels.BaseEntities;
 
 /// <summary>
 /// Implement this interface for an entity which must have TenantId.

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Adm.Core.BaseModels.Auditing;
 
-namespace Adm.Domain.Models.Ref
+namespace Adm.Domain.Models.Ref;
+
+public class Country : AuditedEntity, IAudited
 {
-    public class Country
-    {
-    }
+    public required string Name { get; set; }
 }

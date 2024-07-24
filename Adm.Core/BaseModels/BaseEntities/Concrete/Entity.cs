@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Adm.Core.Extensions;
 
-namespace Adm.Domain.Models.Base.BaseEntities;
+namespace Adm.Core.BaseModels.BaseEntities;
 
 
 /// <summary>

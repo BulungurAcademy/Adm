@@ -1,4 +1,6 @@
-﻿namespace Adm.Core.BaseModels.Auditing;
+﻿using Adm.Core.BaseModels.BaseEntities;
+
+namespace Adm.Core.BaseModels.Auditing;
 
 /// <summary>
 /// An entity can implement this interface if <see cref="DeletionTime"/> of this entity must be stored.

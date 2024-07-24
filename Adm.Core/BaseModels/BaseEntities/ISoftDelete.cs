@@ -1,4 +1,4 @@
-﻿namespace Adm.Domain.Models.Base.BaseEntities;
+﻿namespace Adm.Core.BaseModels.BaseEntities;
 
 /// <summary>
 /// Used to standardize soft deleting entities.

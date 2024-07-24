@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Adm.Domain.Models.Base.BaseEntities;
+﻿using Adm.Core.BaseModels.BaseEntities;
 
 namespace Adm.Core.BaseModels.Auditing;
 

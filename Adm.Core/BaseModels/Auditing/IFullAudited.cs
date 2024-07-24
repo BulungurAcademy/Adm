@@ -1,4 +1,4 @@
-﻿using Adm.Domain.Models.Base.BaseEntities;
+﻿using Adm.Core.BaseModels.BaseEntities;
 
 namespace Adm.Core.BaseModels.Auditing;
 
