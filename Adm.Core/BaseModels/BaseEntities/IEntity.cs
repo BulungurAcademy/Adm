@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Adm.Domain.Models.Base.BaseEntities;
+namespace Adm.Core.BaseModels.BaseEntities;
 
 
 /// <summary>

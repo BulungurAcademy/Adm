@@ -1,4 +1,4 @@
-﻿namespace Adm.Domain.Models.Base.Auditing;
+﻿namespace Adm.Core.BaseModels.Auditing;
 /// <summary>
 /// An entity can implement this interface if <see cref="LastModificationTime"/> of this entity must be stored.
 /// <see cref="LastModificationTime"/> is automatically set when updating <see cref="Entity"/>.

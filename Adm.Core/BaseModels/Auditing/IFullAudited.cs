@@ -1,6 +1,6 @@
 ﻿using Adm.Domain.Models.Base.BaseEntities;
 
-namespace Adm.Domain.Models.Base.Auditing;
+namespace Adm.Core.BaseModels.Auditing;
 
 /// <summary>
 /// This interface ads <see cref="IDeletionAudited"/> to <see cref="IAudited"/> for a fully audited entity.

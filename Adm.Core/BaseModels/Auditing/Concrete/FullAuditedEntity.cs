@@ -2,7 +2,7 @@
 using Adm.Domain.Models.Base.BaseEntities;
 using JurnalEdu.Domain.Models.Base.BaseEntities;
 
-namespace Adm.Domain.Models.Base.Auditing;
+namespace Adm.Core.BaseModels.Auditing;
 
 /// <summary>
 /// A shortcut of <see cref="FullAuditedEntity{TPrimaryKey}"/> for most used primary key type (<see cref="int"/>).

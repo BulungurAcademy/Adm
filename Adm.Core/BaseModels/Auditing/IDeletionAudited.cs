@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Adm.Domain.Models.Base.BaseEntities;
 
-namespace Adm.Domain.Models.Base.Auditing;
+namespace Adm.Core.BaseModels.Auditing;
 
 /// <summary>
 /// This interface is implemented by entities which wanted to store deletion information (who and when deleted).
