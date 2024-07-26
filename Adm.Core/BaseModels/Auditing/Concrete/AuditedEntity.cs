@@ -10,7 +10,10 @@ public abstract class AuditedEntity : AuditedEntity<int>, IEntity
 {
 
 }
-
+public abstract class AuditedEntityWithName : AuditedEntity
+{
+    public required string Name { get; set; }
+}
 /// <summary>
 /// This class can be used to simplify implementing <see cref="IAudited"/>.
 /// </summary>
