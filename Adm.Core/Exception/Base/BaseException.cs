@@ -37,5 +37,7 @@ namespace Adm.Core.Exception
         public BaseException(string message, System.Exception innerException)
             : base(message, innerException)
         { }
+
+        public virtual int StatusCode { get; set; }
     }
 }

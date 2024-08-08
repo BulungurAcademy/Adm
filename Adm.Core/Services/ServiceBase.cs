@@ -1,16 +1,14 @@
 ﻿using Adm.Core.BaseModels.BaseEntities;
 using Adm.Core.DbContext;
+using Adm.Core.Exception;
 using Microsoft.EntityFrameworkCore;
 using System.Collections;
 using System.Linq.Expressions;
 
 namespace Adm.Core.Services
 {
-    public class ServiceBase<T, TId> : IServiceBase<T, TId>,
-        IQueryable<T>,
-        IAsyncEnumerable<T>
-        where T : class 
-        where TId : class
+    public class ServiceBase<T, TId> : IServiceBase<T, TId>, IQueryable<T>, IAsyncEnumerable<T>
+        where T : Entity<TId> where TId : struct
     {
         private readonly BaseDbContext _context;
         public ServiceBase(BaseDbContext context)
@@ -75,39 +73,25 @@ namespace Adm.Core.Services
                 ? this._context.Set<T>().AsNoTracking()
                 : this._context.Set<T>();
         }
-
-
-
-
-
-
-
-
-
-
-        public Task<T?> GetByIdAsync(TId id, bool asNoTracking = false)
+        public async Task<T?> GetByIdAsync(TId id, bool asNoTracking = false)
         {
-            throw new NotImplementedException();
+            return await this.GetAllAsQueryable(asNoTracking)
+                .FirstOrDefaultAsync(x => x.Id.Equals(id));
         }
-        public Task<bool> ExistsAsync(TId id)
+        public async Task<bool> ExistsAsync(TId id)
         {
-            throw new NotImplementedException();
+            return await this.AnyAsync(x => x.Id.Equals(id));
         }
-
-        public Task<T> GetByIdOrThrowsNotFoundException(TId id)
+        public async Task<T> GetByIdOrThrowsNotFoundException(TId id)
         {
-            throw new System.Exception(" not found by {id}");
+            var entity = await this.GetByIdAsync(id);
+            NotFoundException.ThrowIfNull(entity, $"{typeof(T).Name} not found by {id}");
+            return entity!;
         }
-
-
-
-
-
-
         public async Task ExistsOrThrowsNotFoundException(TId id)
         {
             if (!await this.ExistsAsync(id))
-                throw new System.Exception($"{typeof(T).Name} not found by {id}");
+                throw new NotFoundException($"{typeof(T).Name} not found by {id}");
         }
         public async Task<TValue?> GetNextSequenceValue<TValue>(string name, string? schemaName)
             where TValue : struct
